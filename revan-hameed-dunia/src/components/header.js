@@ -4,10 +4,11 @@ import {Navbar, Nav, Form, FormControl, Button} from 'react-bootstrap'
 
 
 export default function Header() {
-    function onSubmit(){
+    function onSubmit(e){
+        e.preventDefault();
         console.log(document.getElementById("input").value);
-       // document.getElementById("input").value = ''
-       document.getElementById("form").reset()
+       document.getElementById("input").value = ''
+       //document.getElementById("form").reset()
     }
     return (
         <>
