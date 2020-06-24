@@ -7,7 +7,7 @@ export default function Header() {
     function onSubmit(e){
         e.preventDefault();
         console.log(document.getElementById("input").value);
-       document.getElementById("input").value = ''
+        document.getElementById("input").value = ''
        //document.getElementById("form").reset()
     }
     return (
