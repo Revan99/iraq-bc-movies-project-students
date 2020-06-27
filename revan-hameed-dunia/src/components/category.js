@@ -1,12 +1,7 @@
 import React from 'react'
 // THIS COMPONENT IF DOR DROPDOWN 
-export default function Category() {
+export default function Category(props) {
     return (
-        <div>
-            
-        </div>
+    <option value={props.categoryName.id}>{props.categoryName.name}</option>
     )
-}
-export function fetchAPI(){
-
 }
