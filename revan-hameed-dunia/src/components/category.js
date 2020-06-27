@@ -5,3 +5,4 @@ export default function Category(props) {
     <option value={props.categoryName.id}>{props.categoryName.name}</option>
     )
 }
+// this component only return options for category

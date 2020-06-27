@@ -4,10 +4,9 @@ import fetchData from './fetchData'
 import Category from './category'
 
 export default function Header(props) {
-
-  
-    
-    
+    const dropdownOnChange = ()=>{
+      
+    }
     return (
         <>
         <Navbar variant="dark" style={{backgroundColor: '#562666'}}>
