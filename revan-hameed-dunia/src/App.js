@@ -16,10 +16,8 @@ function App() {
 
   return (
 
-    <Layout>
-          
+    <Layout>     
           {home()}
-
     </Layout>
   );
 }
