@@ -1,28 +1,49 @@
-import React from 'react';
-import {Link, withRouter, Route} from 'react-router-dom';
-// import logo from './logo.svg';
+import React,{useEffect, useState} from 'react';
+import logo from './logo.svg';
 import './App.css';
-import Layout from '../src/core/layout'
+import Header from './components/header';
+import Footer from './components/footer'
+import Main from './components/main'
+import fetchData from './components/fetchData'
+import Category from './components/category'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import MovieCard from '../src/components/moviecard'
 
+// const constructUrl = (path, query) => {
+//   return `${TMDB_BASE_URL}/${path}?api_key=${atob(
+//     "ZDJmYTdhZDFlMjZhZjA4NDdkMzQ5ZDdkYmQ1ZjkzZTU="
+//   )}&query=${query}`;
+// };
 function App() {
 
-  const home = ()=>(
-    <div className='p-lg-5 m-lg-5'>
-      <h1>
-        Home Page
-      </h1>
-    </div>
+
+
+
+  let geners = fetchData({path:'3/genre/movie/list', query:'', dataType:'genres'})
+  let popular = fetchData({path:'3/movie/popular', query:'', dataType:'results'})
+
+
+  console.log('hameed url',popular)
+  // console.log(geners)
+
+  const MovieGrid = ()=>(
+    <div className='container'>
+    <div className='row'>
+      {popular.map((popular,i)=>(<MovieCard key={i} movies={popular}/>))}
+    </div></div>
   )
 
   return (
 
-    <Layout>     
-          {home()}
-    </Layout>
-  );
+    <div className="App">
+   
+    <Header categorys={geners}/>
+    {MovieGrid()}
+    <Main/>
+    <Footer/>
+   </div>
+ );
+ 
 }
 
 export default App;
-
-
-//rere
