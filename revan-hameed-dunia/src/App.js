@@ -15,7 +15,7 @@ import MovieCard from '../src/components/moviecard'
 //   )}&query=${query}`;
 // };
 function App() {
-
+  const [movies, setMovies] = useState([])
 
 
 
@@ -32,14 +32,14 @@ function App() {
       {popular.map((popular,i)=>(<MovieCard key={i} movies={popular}/>))}
     </div></div>
   )
-
+  console.log(movies);
   return (
 
     <div className="App">
    
-    <Header categorys={geners}/>
-    {MovieGrid()}
-    <Main/>
+    <Header categorys={geners} setMovies={setMovies}/>
+    {/* //{MovieGrid()} */}
+    <Main movies={movies}/>
     <Footer/>
    </div>
  );
