@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import {Navbar, Nav, Form, FormControl, Button, Spinner} from 'react-bootstrap'
 import fetchData from './fetchData'
 import Category from './category'
+import { Link } from 'react-router-dom'
 
 export default function Header(props) {
   const [data, setData] = useState([])
@@ -55,7 +56,7 @@ const trending =
         <Navbar variant="dark" style={{backgroundColor: '#562666'}}>
           <Navbar.Brand href="../public/index.html">Navbar</Navbar.Brand>
           <Nav className="mr-auto">
-            <Nav.Link href="../public/index.html">Home</Nav.Link>
+            <Link to="/">Home</Link>
             <select onChange={dropdownOnChange}>
               <option selected>All Movies</option>
               {props.categorys.map(element=>{
