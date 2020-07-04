@@ -12,6 +12,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import MovieCard from '../src/components/moviecard'
 import{BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 import Movie from './components/movieComponent/selectedMovie'
+import MovieQ from './components/movieQ'
 // const constructUrl = (path, query) => {
 //   return `${TMDB_BASE_URL}/${path}?api_key=${atob(
 //     "ZDJmYTdhZDFlMjZhZjA4NDdkMzQ5ZDdkYmQ1ZjkzZTU="
@@ -19,7 +20,7 @@ import Movie from './components/movieComponent/selectedMovie'
 // };
 function App() {
   const [movies, setMovies] = useState([])
-
+  const [homeOnLoad, setHomeOnLoad] = useState(false)
 
 
   let geners = fetchData({path:'3/genre/movie/list', query:'', dataType:'genres'})
@@ -39,6 +40,7 @@ function App() {
     <Switch>
     <Route path={'/'} exact render={()=><Main movies={movies} /> }/>
     <Route path={'/movie/:id'} component={Movie}/>
+    <Route path={'/search'} render={()=><MovieQ movies={movies} />}/>
     </Switch>
     <Footer/>
    </div>
