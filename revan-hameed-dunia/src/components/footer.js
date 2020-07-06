@@ -1,25 +1,47 @@
-import React from 'react'
-// this only create the footer nothing special 
-export default function footer() {
-    return (
-        <footer className='py-5 fixed-bottom' style={{backgroundColor: '#562666', color: '#ffffff', width: '100%' , bottom:'0'}}>
-            <div className='container d-flex justify-content-around'>
-                
-                  
-                        
-                        <h5>Revan:</h5>
-                        <a href="https://github.com/Revan99" target="_blank">Github account</a>
-                        <h5>Hameed:</h5>
-                        <a href="https://github.com/hameedalnaser" target="_blank">Github account</a>
-                        <h5>Dunia:</h5>
-                        <a href="https://github.com/DuniaNasr" target="_blank">Github account</a> 
-                        <h5>Randa:</h5>
-                        <a href="#" target="_blank">Github account</a> 
-                            
-                    
-                
-            </div>
+import React from "react";
 
-        </footer>
-    )
+import { RiGithubLine } from "react-icons/ri";
+// this only create the footer nothing special
+export default function footer() {
+  return (
+    <footer
+      className="py-3 fixed-bottom"
+      style={{
+        backgroundColor: "#1e272e",
+        color: "red",
+        width: "100%",
+        bottom: "0",
+      }}
+    >
+      <div className="container d-flex justify-content-around">
+        <a className="sty" href="https://github.com/Revan99" target="_blank">
+          <RiGithubLine></RiGithubLine>
+          Revan
+        </a>
+
+        <a className="sty" href="https://github.com/DuniaNasr" target="_blank">
+          <RiGithubLine></RiGithubLine>
+          Dunia
+        </a>
+        <a
+          className="sty"
+          href="https://github.com/hameedalnaser"
+          target="_blank"
+        >
+          <RiGithubLine></RiGithubLine>
+          Hameed
+        </a>
+
+        <a
+          className="sty"
+          href="https://github.com/randa9yahya
+        "
+          target="_blank"
+        >
+          <RiGithubLine></RiGithubLine>
+          Randa
+        </a>
+      </div>
+    </footer>
+  );
 }
